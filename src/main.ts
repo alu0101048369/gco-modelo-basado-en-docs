@@ -3,6 +3,7 @@ import { parseFile } from "./logic/input/parse/file";
 import { newForm } from "./ui/component/form";
 import { switchView } from "./ui/component/main";
 import { loadViewOutput } from "./ui/component/view_output";
+import { TF } from "./logic/metric/TF";
 
 async function main() {
   const vars = await newForm();
@@ -31,3 +32,11 @@ async function main() {
 }
 
 main();
+
+let palabra_clave = "formar";
+let doc = ["doc", "formar", "crear", "formar", "cabeza", "casa", "cabaña", "formar", "forma"];
+
+let result = TF(palabra_clave, doc);
+let ok = 1+ Math.log10(3);
+
+console.log(`Resultado: ${result} \nResultado Correcto: ${ok}`);
