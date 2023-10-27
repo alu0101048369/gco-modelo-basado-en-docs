@@ -24,41 +24,22 @@
         </div>
         <div id="form-body" class="col-12 pb-1 pt-2">
           <div class="mb-3">
-            <label for="formFile" class="form-label">Seleccione un archivo para cargar</label>
-            <input class="form-control" type="file" id="formFile">
+            <label for="fileDocs" class="form-label">Seleccione un archivo de documentos</label>
+            <input class="form-control" type="file" id="fileDocs">
           </div>
-          <div class="d-none dropdown-center mb-1">
-            <button class="btn btn-primary dropdown-toggle w-100" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Seleccione una métrica
-            </button>
-            <ul id="formMetric" class="dropdown-menu">
-              <li><a class="dropdown-item" value="pearson">Correlación de Pearson</a></li>
-              <li><a class="dropdown-item" value="cosine">Distancia coseno</a></li>
-              <li><a class="dropdown-item" value="euclidean">Distancia euclídea</a></li>
-            </ul>
+          <div class="d-none mb-3">
+            <label for="fileStopwords" class="form-label">Seleccione un archivo de palabras de parada</label>
+            <input class="form-control" type="file" id="fileStopwords">
           </div>
-          <div class="d-none mb-2">
-            <label for="formNeighbors" class="form-label">Introduzca el número de vecinos con el que comparar</label>
-            <input type="number" class="form-control" id="formNeighbors">
-            <div class="mt-2 text-center">
-              <button id="formNeighborsButton" type="button" class="btn btn-primary px-5">Aceptar</button>
-            </div>
-          </div>
-          <div class="d-none dropdown-center mb-1">
-            <button class="btn btn-primary dropdown-toggle w-100" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Seleccione un tipo de predicción
-            </button>
-            <ul id="formPrediction" class="dropdown-menu">
-              <li><a class="dropdown-item" value="simple">Predicción simple</a></li>
-              <li><a class="dropdown-item" value="mean">Diferencia con la media</a></li>
-            </ul>
+          <div class="d-none mb-3">
+            <label for="fileLemma" class="form-label">Seleccione un archivo de lematización</label>
+            <input class="form-control" type="file" id="fileLemma">
           </div>
         </div>
         <div id="stepper" class="border-top col-12 pt-3 text-center">
           <div class="bg-primary d-inline-block rounded-circle mx-2 step-icon text-center text-light">1</div>
           <div class="bg-secondary d-inline-block rounded-circle mx-2 step-icon text-center text-light">2</div>
           <div class="bg-secondary d-inline-block rounded-circle mx-2 step-icon text-center text-light">3</div>
-          <div class="bg-secondary d-inline-block rounded-circle mx-2 step-icon text-center text-light">4</div>
         </div>
       </div>
       <div class="d-none row">
