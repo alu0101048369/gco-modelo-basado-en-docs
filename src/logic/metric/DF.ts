@@ -1,11 +1,9 @@
 //DF: número de documentos en N en los que la palabra clave x aparece.
 
 
-export function IDF(
+export function DF(
   N: number,
-  dfx: number
+  x: string
   ){
-    let div = N/dfx;
-    let result = Math.log10(div);
-    return result;
+    
   }
