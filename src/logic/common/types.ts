@@ -1,7 +1,10 @@
+export interface Results {
+    docTerms: DocTerms[];
+    similarities: Similarity[];
+}
+
 export interface DocTerms {
-    // Index of the document that contains these terms
     docIndex: number;
-    // List of terms and their properties
     terms: Term[];
 }
 
@@ -11,4 +14,9 @@ export interface Term {
     tf: number;
     idf: number;
     tfIdf: number;
+}
+
+export interface Similarity {
+    docs: [number, number];
+    value: number;
 }

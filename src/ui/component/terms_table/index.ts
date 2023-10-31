@@ -1,4 +1,4 @@
-import { DocTerms, Term } from "../../../logic/common/doc_terms";
+import { DocTerms, Term } from "../../../logic/common/types";
 
 export function newTermsTable(data: DocTerms): HTMLDivElement {
     const parent = document.createElement("div");
