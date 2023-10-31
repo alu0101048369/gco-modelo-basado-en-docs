@@ -1,5 +1,7 @@
 export interface DocTerms {
+    // Index of the document that contains these terms
     docIndex: number;
+    // List of terms and their properties
     terms: Term[];
 }
 
