@@ -1,10 +1,9 @@
-import "./file";
-import "./metric";
-import "./neighbors";
-import "./prediction";
-import { FormVars, setCallback } from "./vars";
+import "./docs";
+import "./stopwords";
+import "./lemmatization";
+import { setCallback } from "./process";
 
-export function newForm(): Promise<FormVars> {
+export function newForm(): Promise<string[][]> {
     return new Promise(resolve => {
         setCallback(resolve);
     });
