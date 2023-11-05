@@ -1,25 +1,34 @@
-import { Results } from "./common/types";
+import { DocTerms, Results, Term } from "./common/types";
 import { DF } from "./metric/DF";
 import { IDF } from "./metric/IDF";
+import { CalculateSimilarities } from "./metric/Similarity";
 import { TF } from "./metric/TF";
 import { TF_IDF } from "./metric/TFIDF";
 
-export function calculate(docs:string[][]) : Results {
-  const df = DF(docs)
-  const doc_terms = docs.map((doc, index) => { 
+export function calculate(docs: string[][]): Results {
+  const df = DF(docs);
+  const tf_all_docs = docs.map((doc) => {
+    return TF(doc);
+  });
+
+  const similarities = CalculateSimilarities(docs, tf_all_docs);
+
+  const doc_terms: DocTerms[] = docs.map((doc, ind) => {
     return {
-      docIndex: index,
+      docIndex: ind,
       terms: doc.map((term, i) => {
-        const tf = TF(term, doc);
         return {
           index: i,
           value: term,
-          tf,
+          tf: tf_all_docs[ind][term],
           idf: IDF(docs.length, df[term]),
-          tfidf: TF_IDF(tf)
-        }
-      })
-    }
+          tfIdf: TF_IDF(tf_all_docs[ind][term]),
+        };
+      }),
+    };
   });
-  
+  return {
+    docTerms: doc_terms,
+    similarities,
+  };
 }
