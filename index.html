@@ -41,7 +41,39 @@
           <div class="bg-secondary d-inline-block rounded-circle mx-2 step-icon text-center text-light">3</div>
         </div>
       </div>
-      <div class="d-none row"></div>
+      <div class="d-none row">
+        <div class="col-12">
+          <h3 class="py-2">Selección del documento a mostrar</h3>
+          <p id="list-docs" class="text-center"></p>
+        </div>
+        <div class="col-12 table-responsive">
+          <h3 class="py-2">Tabla de términos</h3>
+          <table class="border-secondary table table-bordered text-center">
+            <thead>
+              <tr>
+                <th scope="col">Índice</th>
+                <th scope="col">Término</th>
+                <th scope="col">TF</th>
+                <th scope="col">IDF</th>
+                <th scope="col">TF-IDF</th>
+              </tr>
+            </thead>
+            <tbody id="table-terms"></tbody>
+          </table>
+        </div>
+        <div class="col-12 table-responsive">
+          <h3 class="py-2">Tabla de similaridad</h3>
+          <table class="border-secondary table table-bordered text-center">
+            <thead>
+              <tr>
+                <th scope="col">Documento</th>
+                <th scope="col">Similaridad</th>
+              </tr>
+            </thead>
+            <tbody id="table-similarity"></tbody>
+          </table>
+        </div>
+      </div>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script type="module" src="/src/main.ts"></script>
