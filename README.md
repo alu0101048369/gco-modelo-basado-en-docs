@@ -79,7 +79,6 @@ Este proyecto posee el siguiente código:
 
     - El directorio `logic` que contiene las funciones y parámetros necesarios para los cálculos matemáticos del código. Dentro de este se encuentra lo siguiente:
       - Un directorio `common` el cual contiene código que va a ser compartido entre la interfaz de usuario y la lógica de la aplicación. Dentro de este se encuentra:
-        - Un fichero `parameters.ts`, que contiene el tipo de dato `Parameters`
         - Un directorio `out_types`. Dentro de este se encuentra:
           - Un fichero `correlation_log.ts`.
           - Un fichero `element_predicition_data.ts`.
@@ -88,13 +87,17 @@ Este proyecto posee el siguiente código:
 
       - Un directorio `input`. Dentro de este se encuentra un directorio con un único fichero llamado `file.ts`. Este es el que se encarga de extraer la información de los inputs.
       
-      - Un directorio `metric` que contiene las funciones mátematicas requeridas. En esta se encuentran los ficheros `cosine_dist.ts`, `euclidean.ts` y `pearson.ts`.
+      - Un directorio `metric` que contiene las funciones mátematicas requeridas. En esta se encuentran los ficheros `DF.ts`, `IDF.ts`, `Similarity.ts`, `TF.ts`, `TFIDF.ts` y `common.ts`.
       - Un fichero `function.ts` que llama e utiliza las funciones desarrolladas.
 
-    - El directorio `ui/component` que contiene los componentes de código que van a manejar la interfaz de usuario. A su ves, contiene lo siguiente:
-      - Un directorio `form`, que se encarga de la interfaz del formulario de entrada de los datos.
-      - Un directorio `main`, que se encarga de administrar las vistas principales de la página.
-      - Un directorio `view_output`, que contiene el código que va a manejar los componentes de la vista que muestra las predicciones hechas.
+    - El directorio `ui` que contiene:
+      - El directorio `component` que contienelos componentes de código que van a manejar la interfaz de usuario. A su ves, contiene lo siguiente:
+        - Un directorio `doclist` que contiene el fichero `index.ts`.
+        - Un directorio `form` que contiene `docs.ts`, `index.ts`, `lemmatization.ts`, `process.ts`, `stepper.ts` y `stopwords.ts`
+        - Un directorio `similarity_table` que contiene el fichero `index.ts`.
+        - Un directorio `terms_table` que contiene el fichero `index.ts`.
+
+      - Un directorio `view`, que se encarga de administrar el input y el output.
 
     - El fichero `main.ts` que contiene la función main.
 
@@ -104,8 +107,5 @@ Este proyecto posee el siguiente código:
 
 ## Referencias
 
-[Sistema de Recomendación](https://gco-sistema-recomendacion.pages.dev/).
-
-[Repositorio de matrices ejemplo](https://github.com/ull-cs/gestion-conocimiento/blob/main/recommeder-systems/examples-utility-matrices/utility-matrix-10-25-4.txt).
 
 
