@@ -6,6 +6,7 @@ import { TF_IDF } from "./metric/TFIDF";
 
 export function calculate(docs:string[][]) : Results {
   const df = DF(docs)
+  
   const doc_terms = docs.map((doc, index) => { 
     return {
       docIndex: index,
