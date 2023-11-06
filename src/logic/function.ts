@@ -13,7 +13,7 @@ export function calculate(docs: string[][]): Results {
 
   const similarities = CalculateSimilarities(docs, tf_all_docs);
 
-  const doc_terms: DocTerms[] = docs.map((doc, ind) => {
+  const docTerms: DocTerms[] = docs.map((doc, ind) => {
     return {
       docIndex: ind,
       terms: doc.map((term, i) => {
@@ -28,7 +28,7 @@ export function calculate(docs: string[][]): Results {
     };
   });
   return {
-    docTerms: doc_terms,
+    docTerms,
     similarities,
   };
 }
