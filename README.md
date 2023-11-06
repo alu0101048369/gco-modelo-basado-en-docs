@@ -46,31 +46,6 @@ Y esto le permitirá visualizar la web accediendo a http://localhost:5173/
 
 
 ## Ejemplo de uso
-Para poder hacer uso de nuestro Sistema de Recomendación debe acceder al navegador y acceder a la web. Nosotros accederemos a https://gco-sistema-recomendacion.pages.dev/ pero usted puede acceder a su copia local. Lo primero que veremos es esto:
-
-![Página principal del recomendador](/docs/Inicio.png)
-
-Ahora eligiremos un archivo a utilizar. Para ello pulsará sobre "Seleccionar archivo" y eligirá uno de su biblioteca. Como se observa en la siguiente imagen, se seleccionó el archivo `utility-matrix-10-25-4.txt` que es una de las matrices ejemplo del repositorio añadido a las [Referencias](#referencias). Puede encontrar varias de estas matrices de ejemplo en el directorio `testdata/`
-
-![Aparece ventana para añadir archivo al recomendador](/docs/Seleccionar_archivo.png)
-
-Una vez elegido el archivo, pasaremos a seleccionar la métrica que deseemos utilizar. En este caso, se eligió la opción "Distancia Coseno". 
-
-![Selección de métrica para el recomendador](/docs/Seleccionar_metrica.png)
-
-Seguidamente, se debe elegir el número de vecinos que se desea para el sistema. En esta imagen se observa como se escogen 4 vecinos.
-
-![Selección de número de vecinos para el recomendador](/docs/N_vecinos.png)
-
-El último paso es escoger la manera de predecir los números requeridos y para este ejemplo se elige "Predicción simple".
-
-![Selección de predicción para el recomendador](/docs/Seleccionar_prediccion.png)
-
-Este sería el resultado, como se puede observar nos da la opción de hacer click en cualquier predicción para obtener más información y los detalles de esta se muestra como nos enseña la segunda imagen.
-
-![Resultado del recomendador](/docs/Resultado_p1.png)
-
-![Resultado del recomendador](/docs/Resultado_p2.png)
 
 
 ## Descripción del código
