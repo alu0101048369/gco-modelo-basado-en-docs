@@ -1,21 +1,15 @@
-
 //Frecuencia de la palabra clave x en el documento y.
+export function TF(doc: string[]): { [key: string]: number } {
+  const tf = {} as { [key: string]: number };
 
-export function TF(
-  x: string,
-  y: string[]
-  ){
-  
-    let n_clave = 0;
-    for (let i = 0; i < y.length; i++) {
-      const element = y[i];
-      if(element == x) {
-        n_clave++;
-      }
+  doc.forEach((word) => {
+    if (tf[word] === undefined) {
+      tf[word] = 1;
+      return;
     }
-
-    let result = 1 + Math.log10(n_clave);
-    return result;
+    tf[word]++;
+  });
+  return tf;
 }
 
 /*TEST

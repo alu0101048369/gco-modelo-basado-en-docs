@@ -10,6 +10,7 @@ export function newSimilarityTable(sims: Similarity[]): HTMLDivElement {
 
 function newTitle(): HTMLHeadingElement {
     const title = document.createElement("h3");
+    title.classList.add("py-2");
     title.innerText = "Tabla de similaridad";
     return title;
 }
@@ -24,16 +25,20 @@ function newTable(sims: Similarity[]): HTMLTableElement {
 
 function newTableHeader(): HTMLTableSectionElement {
     const thead = document.createElement("thead");
+    const tr = document.createElement("tr");
     
     const indexTH = document.createElement("th");
     indexTH.innerText = "Índices";
     indexTH.colSpan = 2;
-    thead.appendChild(indexTH);
+    indexTH.scope = "colgroup";
+    tr.appendChild(indexTH);
 
     const similarityTH = document.createElement("th");
     similarityTH.innerText = "Similaridad";
-    thead.appendChild(similarityTH);
+    similarityTH.scope = "col";
+    tr.appendChild(similarityTH);
 
+    thead.appendChild(tr);
     return thead;
 }
 
