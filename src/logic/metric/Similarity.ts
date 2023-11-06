@@ -7,7 +7,7 @@ export function CalculateSimilarities(
 ): Similarity[] {
   const normalized_tf: { [key: string]: number }[] = [];
   // Calculating normalized tf
-  tf.forEach((doc_tf, i) => {
+  tf.forEach((doc_tf) => {
     const tf_line = {} as { [key: string]: number };
     let sum = 0;
     for (let key in doc_tf) {
@@ -22,7 +22,7 @@ export function CalculateSimilarities(
   });
 
   const result: Similarity[] = [];
-  docs.forEach((doc, index) => {
+  docs.forEach((_, index) => {
     normalized_tf.forEach((other_doc_tf, i) => {
       if (index !== i) {
         let sim = 0;

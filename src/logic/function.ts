@@ -1,4 +1,4 @@
-import { DocTerms, Results, Term } from "./common/types";
+import { DocTerms, Results } from "./common/types";
 import { DF } from "./metric/DF";
 import { IDF } from "./metric/IDF";
 import { CalculateSimilarities } from "./metric/Similarity";
