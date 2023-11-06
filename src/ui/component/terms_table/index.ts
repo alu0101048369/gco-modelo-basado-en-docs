@@ -10,7 +10,8 @@ export function newTermsTable(data: DocTerms): HTMLDivElement {
 
 function newTitle(index: number): HTMLHeadingElement {
     const title = document.createElement("h3");
-    title.innerText = `Documento ${index}`;
+    title.classList.add("py-2");
+    title.innerText = `Documento ${index+1}`;
     return title;
 }
 
@@ -24,11 +25,14 @@ function newTable(terms: Term[]): HTMLTableElement {
 
 function newTableHeader(fields: string[]): HTMLTableSectionElement {
     const thead = document.createElement("thead");
+    const tr = document.createElement("tr");
     fields.forEach(str => {
         const th = document.createElement("th");
         th.innerText = str;
-        thead.appendChild(th);
+        th.scope = "col";
+        tr.appendChild(th);
     });
+    thead.appendChild(tr);
     return thead;
 }
 
