@@ -20,7 +20,7 @@ El objetivo de este proyecto es ofrecer una aplicación web para predecir prefer
 
 ## Instalación y despliegue
 
-Esta aplicación se despliega automáticamente cada vez que hay cambios en la rama `main` gracias a la integración de CI/CD de GitHub Actions y Cloudflare Pages. La URL en la que se despliega es [https://gco-sistema-recomendacion.pages.dev/](https://gco-modelo-basado-en-docs.pages.dev)
+Esta aplicación se despliega automáticamente cada vez que hay cambios en la rama `main` gracias a la integración de CI/CD de GitHub Actions y Cloudflare Pages. La URL en la que se despliega es https://gco-modelo-basado-en-docs.pages.dev
 
 Si se desease instalar el proyecto de forma local en un dispositivo, se requerirá de NodeJS, NPM, y opcionalmente un servidor web para poder visualizarlo. Para ello importe el repositorio y ejecute el siguiente comando para instalar las dependencias:
 
@@ -46,7 +46,20 @@ Y esto le permitirá visualizar la web accediendo a http://localhost:5173/
 
 
 ## Ejemplo de uso
+Para poder hacer uso de nuestro Sistema de Recomendación debe acceder al navegador y acceder a la web. Nosotros accederemos a https://gco-modelo-basado-en-docs.pages.dev pero usted puede acceder a su copia local. Lo primero que veremos es esto:
 
+![Página principal del recomendador](/images/Eleccion_doc.png)
+
+Ahora eligiremos un archivo a utilizar. Para ello pulsará sobre "Seleccionar archivo" y eligirá uno de su biblioteca. Como se observa en la siguiente imagen, se seleccionó el archivo `documents-01` que es uno de los conjuntos de documentos de ejemplo del repositorio añadido a las [Referencias](#referencias). Puede encontrar varios de estos documentos de ejemplo en el directorio testdata/
+
+![Página principal del recomendador](/images/Selec_doc.png)
+
+
+![Página principal del recomendador](/images/Eleccion_stp.png)
+![Página principal del recomendador](/images/Selec_stp.png)
+![Página principal del recomendador](/images/Eleccion_corpus.png)
+![Página principal del recomendador](/images/Selec_corpus.png)
+![Página principal del recomendador](/images/Resultado.png)
 
 ## Descripción del código
 Este proyecto posee el siguiente código:
