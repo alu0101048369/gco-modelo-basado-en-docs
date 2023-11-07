@@ -20,7 +20,7 @@ El objetivo de este proyecto es ofrecer una aplicación web para computar predic
 
 ## Instalación y despliegue
 
-Esta aplicación se despliega automáticamente cada vez que hay cambios en la rama `main` gracias a la integración de CI/CD de GitHub Actions y Cloudflare Pages. La URL en la que se despliega es https://gco-sistema-recomendacion.pages.dev/
+Esta aplicación se despliega automáticamente cada vez que hay cambios en la rama `main` gracias a la integración de CI/CD de GitHub Actions y Cloudflare Pages. La URL en la que se despliega es [https://gco-sistema-recomendacion.pages.dev/](https://gco-modelo-basado-en-docs.pages.dev)
 
 Si se desease instalar el proyecto de forma local en un dispositivo, se requerirá de NodeJS, NPM, y opcionalmente un servidor web para poder visualizarlo. Para ello importe el repositorio y ejecute el siguiente comando para instalar las dependencias:
 
@@ -81,6 +81,6 @@ Este proyecto posee el siguiente código:
 - Un directorio `testdata` que contiene los datos a probar.
 
 ## Referencias
-
+[Sistema Recomendador](https://gco-modelo-basado-en-docs.pages.dev)
 
 
