@@ -1,5 +1,4 @@
 import { Similarity } from "../common/types";
-import { TF_IDF } from "./TFIDF";
 
 export function CalculateSimilarities(
   docs: string[][],
@@ -7,22 +6,24 @@ export function CalculateSimilarities(
 ): Similarity[] {
   const normalized_tf: { [key: string]: number }[] = [];
   // Calculating normalized tf
-  tf.forEach((doc_tf, i) => {
+  tf.forEach((doc_tf) => {
     const tf_line = {} as { [key: string]: number };
     let sum = 0;
+
     for (let key in doc_tf) {
-      sum += TF_IDF(doc_tf[key]) * TF_IDF(doc_tf[key]);
+      sum += doc_tf[key] * doc_tf[key];
     }
     sum = Math.sqrt(sum);
+
     for (let key in doc_tf) {
-      tf_line[key] = TF_IDF(doc_tf[key]) / (sum || 1);
+      tf_line[key] = doc_tf[key] / (sum || 1);
     }
 
     normalized_tf.push(tf_line);
   });
 
   const result: Similarity[] = [];
-  docs.forEach((doc, index) => {
+  docs.forEach((_, index) => {
     normalized_tf.forEach((other_doc_tf, i) => {
       if (index !== i) {
         let sim = 0;
