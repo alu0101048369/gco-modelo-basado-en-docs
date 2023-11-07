@@ -16,7 +16,7 @@
 6. [Referencias](#referencias)
 
 ## Descripción del concepto
-El objetivo de este proyecto es ofrecer una aplicación web para predecir preferencias según las características de los elementos y las preferencias del usuario, sin depender del comportamiento de otros usuarios.
+El objetivo de este proyecto es ofrecer una aplicación web para sugerir elementos según las características de los elementos y las preferencias del usuario, sin depender del comportamiento de otros usuarios.
 
 ## Instalación y despliegue
 
