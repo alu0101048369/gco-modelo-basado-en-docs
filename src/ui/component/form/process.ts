@@ -6,7 +6,10 @@ let stopwords = {} as {[key: string]: boolean};
 export function execCallback() {
     callback(docs.
         map(doc => doc.
-            map(word => lemMap[word] ? lemMap[word] : word).
+            map(word => {
+                word = word.replace(/[,\.]/g, "").toLowerCase();
+                return lemMap[word] ? lemMap[word] : word
+            }).
             filter(word => !stopwords[word])));
 }
 
