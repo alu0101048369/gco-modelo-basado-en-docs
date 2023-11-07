@@ -13,7 +13,7 @@ export function setSimilarityTableData(sims: Similarity[]) {
         tr.appendChild(th);
 
         const td = document.createElement("td");
-        td.innerText = String(sim.value);
+        td.innerText = sim.value.toFixed(5);
         tr.appendChild(td);
 
         tbody.appendChild(tr);

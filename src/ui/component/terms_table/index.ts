@@ -17,15 +17,15 @@ export function setTermsTableData(terms: Term[]) {
         tr.appendChild(tdValue);
 
         const tdTf = document.createElement("td");
-        tdTf.innerText = String(term.tf);
+        tdTf.innerText = term.tf.toFixed(5);
         tr.appendChild(tdTf);
 
         const tdIdf = document.createElement("td");
-        tdIdf.innerText = String(term.idf);
+        tdIdf.innerText = term.idf.toFixed(5);
         tr.appendChild(tdIdf);
 
         const tdTfIdf = document.createElement("td");
-        tdTfIdf.innerText = String(term.tfIdf);
+        tdTfIdf.innerText = term.tfIdf.toFixed(5);
         tr.appendChild(tdTfIdf);
 
         tbody.appendChild(tr);
