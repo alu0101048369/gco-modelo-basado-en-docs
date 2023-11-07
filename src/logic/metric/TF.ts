@@ -1,27 +1,13 @@
 //Frecuencia de la palabra clave x en el documento y.
 export function TF(doc: string[]): { [key: string]: number } {
-  const count = {} as { [key: string]: number };
+  const count = doc.reduce((acc, word) => {
+    acc[word] = (acc[word] || 0) + 1;
+    return acc;
+  }, {} as { [key: string]: number })
 
-  doc.forEach((word) => {
-    if (count[word] === undefined) {
-      count[word] = 1;
-      return;
-    }
-    count[word]++;
-  });
-  const tf = {} as { [key: string]: number };
-  for (let key in count) {
-    tf[key] = 1 + Math.log10(count[key]);
-  }
-  return tf;
+  const results = Object.keys(count).reduce((acc, key) => {
+    acc[key] = 1 + Math.log10(count[key]);
+    return acc;
+  }, {} as { [key: string]: number })
+  return results;
 }
-
-/*TEST
- 
-let palabra_clave = "formar";
-let doc = ["doc", "formar", "crear", "formar", "cabeza", "casa", "cabaña", "formar", "forma"];
-
-let result = TF(palabra_clave, doc);
-let ok = 1+ Math.log10(3);
-
-console.log(`Resultado: ${result} \nResultado Correcto: ${ok}`); */

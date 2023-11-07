@@ -12,7 +12,7 @@ export function newDocList(r: Results) {
         btn.innerText = String(docTerms.docIndex+1).padStart(docIndexLengthInChars, "0");
         btn.addEventListener("click", () => {
             setTermsTableData(docTerms.terms);
-            setSimilarityTableData(r.similarities.filter(sim => sim.docs[0] === docTerms.docIndex));
+            setSimilarityTableData(r.simCalc.calculateSims(docTerms.docIndex));
         });
         docList.appendChild(btn);
     });

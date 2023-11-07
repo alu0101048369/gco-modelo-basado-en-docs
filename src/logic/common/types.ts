@@ -1,6 +1,8 @@
+import { SimilarityCalculator } from "../metric/Similarity";
+
 export interface Results {
     docTerms: DocTerms[];
-    similarities: Similarity[];
+    simCalc: SimilarityCalculator;
 }
 
 export interface DocTerms {

@@ -1,41 +1,27 @@
 import { Similarity } from "../common/types";
 
-export function CalculateSimilarities(
-  docs: string[][],
-  tf: { [key: string]: number }[]
-): Similarity[] {
-  const normalized_tf: { [key: string]: number }[] = [];
-  // Calculating normalized tf
-  tf.forEach((doc_tf) => {
-    const tf_line = {} as { [key: string]: number };
-    let sum = 0;
+export class SimilarityCalculator {
+  private normalizedTF = [] as {[key: string]: number}[];
+  
+  constructor(tf: {[key: string]: number}[]) {
+    tf.forEach((docTF) => {
+      const sum = Math.sqrt(Object.values(docTF).reduce((acc, val) => acc + (val*val), 0));
+      
+      this.normalizedTF.push(
+        Object.keys(docTF).reduce((acc, key) => {
+          acc[key] = docTF[key] / (sum || 1);
+          return acc;
+        }, {} as { [key: string]: number })
+      );
+    });
+  }
 
-    for (let key in doc_tf) {
-      sum += doc_tf[key] * doc_tf[key];
-    }
-    sum = Math.sqrt(sum);
-
-    for (let key in doc_tf) {
-      tf_line[key] = doc_tf[key] / (sum || 1);
-    }
-
-    normalized_tf.push(tf_line);
-  });
-
-  const result: Similarity[] = [];
-  docs.forEach((_, index) => {
-    normalized_tf.forEach((other_doc_tf, i) => {
-      if (index !== i) {
-        let sim = 0;
-        for (let key in other_doc_tf) {
-          sim += other_doc_tf[key] * (normalized_tf[index][key] || 0);
-        }
-        result.push({
-          docs: [index, i],
-          value: sim,
-        });
+  calculateSims(docIndex: number): Similarity[] {
+    return this.normalizedTF.map((tf, tfIndex) => {
+      return {
+        docs: [docIndex, tfIndex],
+        value: Object.keys(tf).reduce((acc, key) => acc + tf[key] * (this.normalizedTF[docIndex][key] || 0), 0)
       }
     });
-  });
-  return result;
+  }
 }

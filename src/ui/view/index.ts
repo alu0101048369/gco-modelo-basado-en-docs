@@ -11,8 +11,5 @@ export function switchView(r: Results) {
 }
 
 viewInput().then(data => {
-    console.log("Data parsed. Processing...");
-    const outData = calculate(data);
-    console.log("Data processed. Drawing on the UI...");
-    switchView(outData);
+    switchView(calculate(data));
 });
