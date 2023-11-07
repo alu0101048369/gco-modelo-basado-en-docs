@@ -108,6 +108,7 @@ Este proyecto posee el siguiente código:
 
 ## Referencias
 [Sistema Recomendador](https://gco-modelo-basado-en-docs.pages.dev)
+
 [Documentos Ejemplo](https://github.com/ull-cs/gestion-conocimiento/tree/main/recommeder-systems/examples-documents)
 
 
