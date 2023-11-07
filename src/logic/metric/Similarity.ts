@@ -10,6 +10,7 @@ export function CalculateSimilarities(
   tf.forEach((doc_tf) => {
     const tf_line = {} as { [key: string]: number };
     let sum = 0;
+
     for (let key in doc_tf) {
       sum += TF_IDF(doc_tf[key]) * TF_IDF(doc_tf[key]);
     }

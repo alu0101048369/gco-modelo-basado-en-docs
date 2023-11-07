@@ -1,4 +1,4 @@
-import { DocTerms, Results } from "./common/types";
+import { DocTerms, Results, Term } from "./common/types";
 import { DF } from "./metric/DF";
 import { IDF } from "./metric/IDF";
 import { CalculateSimilarities } from "./metric/Similarity";
@@ -14,9 +14,10 @@ export function calculate(docs: string[][]): Results {
   const similarities = CalculateSimilarities(docs, tf_all_docs);
 
   const docTerms: DocTerms[] = docs.map((doc, ind) => {
+    const doc_terms = doc.filter((term, index) => doc.indexOf(term) === index);
     return {
       docIndex: ind,
-      terms: doc.map((term, i) => {
+      terms: doc_terms.map((term, i) => {
         return {
           index: i,
           value: term,
