@@ -70,7 +70,7 @@ En este caso, se ha elegido `corpus-en` que también se encuentra en el director
 
 ![Página principal del recomendador](/images/Selec_corpus.png)
 
-Este sería el resultado, como se puede observar nos da la opción de hacer click en los distintos documentos pertenecientes a `doctuments-01` y visualizar la informaciuón extraída.
+Este sería el resultado, como se puede observar nos da la opción de hacer click en los distintos documentos pertenecientes a `doctuments-01` y visualizar la información extraída.
 
 ![Página principal del recomendador](/images/Resultado.png)
 
