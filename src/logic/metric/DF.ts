@@ -12,6 +12,6 @@ export function DF(docs: string[][]): { [key: string]: number } {
       df[word]++;
     })
   );
-
+  console.log(df);
   return df;
 }
