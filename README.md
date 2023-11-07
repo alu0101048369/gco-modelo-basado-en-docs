@@ -50,15 +50,28 @@ Para poder hacer uso de nuestro Sistema de Recomendación debe acceder al navega
 
 ![Página principal del recomendador](/images/Eleccion_doc.png)
 
-Ahora eligiremos un archivo a utilizar. Para ello pulsará sobre "Seleccionar archivo" y eligirá uno de su biblioteca. Como se observa en la siguiente imagen, se seleccionó el archivo `documents-01` que es uno de los conjuntos de documentos de ejemplo del repositorio añadido a las [Referencias](#referencias). Puede encontrar varios de estos documentos de ejemplo en el directorio testdata/
+Ahora eligiremos un archivo a utilizar. Para ello pulsará sobre "Seleccionar archivo" y eligirá uno de su biblioteca. Como se observa en la siguiente imagen, se seleccionó el archivo `documents-01` que es uno de los conjuntos de documentos de ejemplo del repositorio añadido a las [Referencias](#referencias). Puede encontrar varios de estos documentos de ejemplo en el directorio testdata/.
 
 ![Página principal del recomendador](/images/Selec_doc.png)
 
+Una vez elegido el archivo, pasaremos a selecionar el fichero de palabras de parada. Este deberá estar en el mismo idioma que los documentos previamente seleccionados.
 
 ![Página principal del recomendador](/images/Eleccion_stp.png)
+
+En este caso, se ha elegido `stop-words-en` que también se encuentra en el directorio testdata/.
+
 ![Página principal del recomendador](/images/Selec_stp.png)
+
+Seguidamente, se nos ha presentado otro selecionador de archivos. En este debemos añadir la lematización necesaria, es decir a la que corresponda el idioma.
+
 ![Página principal del recomendador](/images/Eleccion_corpus.png)
+
+En este caso, se ha elegido `corpus-en` que también se encuentra en el directorio testdata/.
+
 ![Página principal del recomendador](/images/Selec_corpus.png)
+
+Este sería el resultado, como se puede observar nos da la opción de hacer click en los distintos documentos pertenecientes a `doctuments-01` y visualizar la informaciuón extraída.
+
 ![Página principal del recomendador](/images/Resultado.png)
 
 ## Descripción del código
