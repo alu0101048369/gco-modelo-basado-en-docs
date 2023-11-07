@@ -1,5 +1,4 @@
 import { Similarity } from "../common/types";
-import { TF_IDF } from "./TFIDF";
 
 export function CalculateSimilarities(
   docs: string[][],

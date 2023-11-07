@@ -1,4 +1,4 @@
-import { DocTerms, Results, Term } from "./common/types";
+import { DocTerms, Results } from "./common/types";
 import { DF } from "./metric/DF";
 import { IDF } from "./metric/IDF";
 import { CalculateSimilarities } from "./metric/Similarity";
@@ -23,7 +23,7 @@ export function calculate(docs: string[][]): Results {
           value: term,
           tf: tf_all_docs[ind][term],
           idf: IDF(docs.length, df[term]),
-          tfIdf: TF_IDF(tf_all_docs[ind][term], df[term]),
+          tfIdf: TF_IDF(tf_all_docs[ind][term], IDF(docs.length, df[term])),
         };
       }),
     };
